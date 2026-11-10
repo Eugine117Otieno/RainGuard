@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RainGuard Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🌧️ RainGuard</a>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="build.html">How to Build</a>
+            <a href="simulator.html">Simulator</a>
+        </div>
+    </nav>
+</header>
+
+<main class="page-container">
+    <h1>RainGuard Simulator</h1>
+    <p class="intro">
+        Change the water level and rubbish coverage to see how the
+        demonstration model responds.
+    </p>
+
+    <section class="simulator">
+        <div class="controls">
+            <label for="waterLevel">
+                Water Level: <strong id="waterValue">30%</strong>
+            </label>
+            <input type="range" id="waterLevel" min="0" max="100" value="30">
+
+            <label for="litterLevel">
+                Mesh Litter Coverage: <strong id="litterValue">15%</strong>
+            </label>
+            <input type="range" id="litterLevel" min="0" max="100" value="15">
+
+            <button class="btn" id="resetButton">Reset Simulation</button>
+
+            <h2>System Status</h2>
+            <p id="statusMessage" class="status normal">
+                Normal flow: continue monitoring.
+            </p>
+        </div>
+
+        <div class="simulation-scene">
+            <h3>Drainage Channel</h3>
+            <div class="water-container">
+                <div class="water" id="water"></div>
+                <div class="float" id="float">●</div>
+                <div class="mesh">╱╱╱</div>
+                <div class="basket">🧺</div>
+            </div>
+            <p class="scene-label">Illustrative model view</p>
+        </div>
+    </section>
+
+    <div class="warning">
+        This simulator is only an illustration. It does not read a real
+        sensor or control a physical RainGuard device.
+    </div>
+</main>
+
+<footer>
+    <p>© <span id="year"></span> RainGuard School Project</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
